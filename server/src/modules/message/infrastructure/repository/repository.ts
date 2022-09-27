@@ -22,4 +22,14 @@ export class RepositoryMessage extends RepMessageAdapter {
             },
         })
     }
+
+    findByInput(input: string): Promise<any> {
+        return this.repository.mESSAGE.findFirst({
+            where: {
+                 input: {
+                     contains: input
+                 }
+            }
+        })
+    }
 }

@@ -1,8 +1,8 @@
-import {IUseCase} from "../useCases.adpter";
-import {RepositoryFactory} from "../../../../database/factory/repository.factory";
-import {MessageDomain} from "../../domain/message.domain";
-import {MessageEntity} from "../../domain/entity/message.entity";
-import {Result} from "../../../../common/error/Http.response";
+import {IUseCase} from "../../useCases.adpter";
+import {RepositoryFactory} from "../../../../../database/factory/repository.factory";
+import {MessageDomain} from "../../../domain/message.domain";
+import {MessageEntity} from "../../../domain/entity/message.entity";
+import {Result} from "../../../../../common/error/Http.response";
 
 export interface ICreateResponseBYMessage{
     id: string
@@ -18,7 +18,7 @@ export class CreateResponseByMessageUseCase extends IUseCase<ICreateResponseBYMe
         super()
     }
 
-    async execute(data: ICreateResponseBYMessage): Promise<any> {
+    async execute(data: ICreateResponseBYMessage): Promise<Result<MessageEntity>> {
         try{
             const messageExists = await this.repository.RepMessage.exists({
                 id: Number(data.id)
@@ -37,7 +37,6 @@ export class CreateResponseByMessageUseCase extends IUseCase<ICreateResponseBYMe
 
             return Result.ok<MessageEntity>(201, output)
         }catch (errorUpdatingOutput) {
-            console.log(errorUpdatingOutput)
             return Result.fail(this.internalError_msg, 500)
         }
     }

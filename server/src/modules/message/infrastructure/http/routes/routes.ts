@@ -21,4 +21,6 @@ routesMessage.put('/:id', ValidateBody(
     })
 ),MessageController.update)
 
+routesMessage.get('/:message', MessageController.consultMessage)
+
 export default routesMessage

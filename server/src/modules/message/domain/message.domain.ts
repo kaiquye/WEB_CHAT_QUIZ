@@ -34,4 +34,8 @@ export class MessageDomain implements MessageEntity {
     public uploadOutput(id: string, data: Partial<MessageEntity>){
          return this.database.RepMessage.update(id, data)
     }
+
+    public consultOutputByInput(input: string){
+         return this.database.RepMessage.findByInput(input)
+    }
 }

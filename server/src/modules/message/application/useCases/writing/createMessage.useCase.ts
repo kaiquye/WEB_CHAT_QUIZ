@@ -1,8 +1,8 @@
-import {IUseCase} from "../useCases.adpter";
-import {MessageEntity} from "../../domain/entity/message.entity";
-import {RepositoryFactory} from "../../../../database/factory/repository.factory";
-import {MessageDomain} from "../../domain/message.domain";
-import {Result} from "../../../../common/error/Http.response";
+import {IUseCase} from "../../useCases.adpter";
+import {MessageEntity} from "../../../domain/entity/message.entity";
+import {RepositoryFactory} from "../../../../../database/factory/repository.factory";
+import {MessageDomain} from "../../../domain/message.domain";
+import {Result} from "../../../../../common/error/Http.response";
 
 export interface ICreateMessage {
     user_id: string;
