@@ -3,7 +3,7 @@ import {RepositoryFactory} from "../../../database/factory/repository.factory";
 
 
 export class MessageDomain implements MessageEntity {
-     id: string;
+     id: number;
      input: string;
      output: string;
      updateAt: Date | null;
@@ -29,5 +29,9 @@ export class MessageDomain implements MessageEntity {
             output: this.output,
             user_id: this.user_id
         })
+    }
+
+    public uploadOutput(id: string, data: Partial<MessageEntity>){
+         return this.database.RepMessage.update(id, data)
     }
 }

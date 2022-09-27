@@ -2,7 +2,7 @@ import {IUseCase} from "../useCases.adpter";
 import {MessageEntity} from "../../domain/entity/message.entity";
 import {RepositoryFactory} from "../../../../database/factory/repository.factory";
 import {MessageDomain} from "../../domain/message.domain";
-import {Result} from "../../../../shared/http/template/Http.response";
+import {Result} from "../../../../common/error/Http.response";
 
 export interface ICreateMessage {
     user_id: string;
@@ -10,15 +10,25 @@ export interface ICreateMessage {
     output?:string
 }
 
-export class CreateMessageUseCase implements IUseCase<ICreateMessage, Result<MessageEntity>>{
-    private readonly internalError_msg = 'internal error, contact an administrator';
+export class CreateMessageUseCase extends IUseCase<ICreateMessage, Result<MessageEntity>>{
+    private readonly user_not_found_msg = 'unable to find user by id';
 
     constructor(
         private repository: RepositoryFactory
-    ) {}
+    ) {
+        super()
+    }
 
    async execute(data?: ICreateMessage): Promise<Result<MessageEntity>> {
         try{
+            const userExists = await this.repository.RepUser.exists({
+                id: data.user_id
+            })
+
+            if(!userExists){
+                return Result.fail(this.user_not_found_msg, 404)
+            }
+
             const domain = new MessageDomain(this.repository, data.input, data.output, data.user_id)
 
             const message = await domain.save()

@@ -15,7 +15,7 @@ export abstract class BaseRep<T> implements IBaseRep<T> {
         return this.ORM[this.TABLE].delete({ where })
     }
 
-    exists(where: T): Promise<boolean> {
+    exists(where: Partial<T>): Promise<boolean> {
         return this.ORM[this.TABLE].findFirst({ where })
     }
 

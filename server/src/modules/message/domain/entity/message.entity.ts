@@ -1,5 +1,5 @@
 export interface MessageEntity {
-    id?: string
+    id?: number
     input:string
     output: string
     createdAt?: Date | null
