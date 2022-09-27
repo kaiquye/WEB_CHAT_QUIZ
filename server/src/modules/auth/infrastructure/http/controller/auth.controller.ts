@@ -2,7 +2,6 @@ import {Request, Response} from "express";
 import {ILoginUser, LoginUseCase} from "../../../application/useCases/login.useCase";
 import {RepositoryFactory} from "../../../../../database/factory/repository.factory";
 import {Result} from "../../../../../common/error/Http.response";
-import {UserEntity} from "../../../../user/domain/entity/user.entity";
 
 
 class AuthController {
@@ -11,6 +10,8 @@ class AuthController {
             email: req.body.email,
             password: req.body.password
         }
+
+        console.log(body)
 
         const application = new LoginUseCase(new RepositoryFactory())
 

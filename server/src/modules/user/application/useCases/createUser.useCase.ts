@@ -22,8 +22,11 @@ export class CreateUserUseCase extends IUseCase<ICreateUser, Result<UserEntity>>
 
             const user = await domain.save()
 
+            user.password = undefined;
+
             return Result.ok<UserEntity>(201, user);
         }catch (e) {
+            console.log(e)
             return Result.fail(this.internalError_msg, 500)
         }
     }

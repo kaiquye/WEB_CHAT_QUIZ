@@ -11,7 +11,7 @@ try {
 
     server.use(ApplicationRoutes);
 
-    server.listen(3030, () => console.log('Bomb Has Been Planted...'));
+    server.listen(3031, () => console.log('Bomb Has Been Planted...'));
 } catch (e) {
     console.log(e);
 }

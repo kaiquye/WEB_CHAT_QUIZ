@@ -1,6 +1,5 @@
 import {RepositoryFactory} from "../../../database/factory/repository.factory";
-import {NextFunction, Response} from "express";
-import bcrypt from 'bcrypt';
+import * as  bcrypt from 'bcrypt';
 
 export class AuthDomain {
     id?: string;
@@ -14,14 +13,14 @@ export class AuthDomain {
     }
 
     public async login(email: string, password: string){
-        const user = await this.database.RepUser.findByEmail(email)
+            const user = await this.database.RepUser.findByEmail(email)
 
-        if(!user){
-            return false
-        }
+            if(!user){
+                return false
+            }
 
-        const match = bcrypt.compare(password, user.password)
+            const match = await bcrypt.compare(password, user.password)
 
-        return !!match;
+            return !!match;
     }
 }

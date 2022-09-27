@@ -1,5 +1,6 @@
 import {UserEntity} from "./entity/user.entity";
 import {RepositoryFactory} from "../../../database/factory/repository.factory";
+import * as  bcrypt from 'bcrypt';
 
 export class UserDomain implements UserEntity {
     id: string;
@@ -22,9 +23,11 @@ export class UserDomain implements UserEntity {
             throw new Error('invalid params, email ou password is null');
         }
 
+        const hashPassword = await bcrypt.hash(this.password, 10)
+
         return this.database.RepUser.save({
             email: this.email,
-            password: this.password,
+            password: hashPassword,
         })
     }
 }
