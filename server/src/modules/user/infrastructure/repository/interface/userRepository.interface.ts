@@ -1,4 +1,6 @@
 import {BaseRep} from "../../../../../database/base/baseRep.abstract";
 import {UserEntity} from "../../../domain/entity/user.entity";
 
-export abstract class RepUserAdapter extends BaseRep<UserEntity> {}
+export abstract class RepUserAdapter extends BaseRep<UserEntity> {
+    abstract findByEmail(email: string): Promise<any>
+}
