@@ -6,7 +6,7 @@ import Authorization from "../../../../auth/infrastructure/http/middleware/autho
 
 const routesMessage = Router()
 
-routesMessage.use(Authorization.isAuthorization)
+// routesMessage.use(Authorization.isAuthorization)
 
 routesMessage.post('/', ValidateBody(
     joi.object().keys({
@@ -16,14 +16,9 @@ routesMessage.post('/', ValidateBody(
     })
 ),MessageController.create)
 
-routesMessage.put('/:id', ValidateBody(
-    joi.object().keys({
-        input: joi.string(),
-        output: joi.string(),
-        status: joi.boolean()
-    })
-),MessageController.update)
+routesMessage.put('/:id',MessageController.update)
 
 routesMessage.get('/:message', MessageController.consultMessage)
 
+routesMessage.get('/', MessageController.gelAll)
 export default routesMessage

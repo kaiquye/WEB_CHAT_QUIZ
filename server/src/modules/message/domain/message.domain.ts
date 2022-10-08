@@ -38,4 +38,8 @@ export class MessageDomain implements MessageEntity {
     public consultOutputByInput(input: string){
          return this.database.RepMessage.findByInput(input)
     }
+
+    public getAll() {
+         return this.database.RepMessage.findAll();
+    }
 }

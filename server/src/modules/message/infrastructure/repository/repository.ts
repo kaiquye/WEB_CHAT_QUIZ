@@ -4,6 +4,7 @@ import {MessageEntity} from "../../domain/entity/message.entity";
 
 
 export class RepositoryMessage extends RepMessageAdapter {
+
     repository: PrismaClient
 
     constructor(ORM: PrismaClient) {
@@ -29,6 +30,14 @@ export class RepositoryMessage extends RepMessageAdapter {
                  input: {
                      contains: input
                  }
+            }
+        })
+    }
+
+    findAll() {
+        return this.repository.mESSAGE.findMany({
+            include: {
+                USER:true
             }
         })
     }

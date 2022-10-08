@@ -1,0 +1,32 @@
+.message {
+    width: 100%;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    color: white;
+
+    font-family: Ubuntu;
+
+    font-size: 8px;
+    margin-bottom: 5px;
+}
+
+.message .user {
+    background-color: grey;
+    float:right;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.message .cpu {
+    float: left;
+    background-color: #ff4848;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}

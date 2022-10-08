@@ -11,6 +11,7 @@ import {
 } from "../../../application/useCases/reading/findMessageByInput.useCase";
 import {Result} from "../../../../../common/error/Http.response";
 import {MessageEntity} from "../../../domain/entity/message.entity";
+import {FindAllMessageUseCase} from "../../../application/useCases/reading/findAllMessage.useCase";
 
 class MessageController {
 
@@ -29,6 +30,8 @@ class MessageController {
 
         body = Object.assign(req.body, req.params)
 
+        console.log(body)
+
         const application = new CreateResponseByMessageUseCase(new RepositoryFactory())
 
         const result: Result<MessageEntity> = await application.execute(body);
@@ -44,6 +47,14 @@ class MessageController {
         const application = new FindMessageByInputUseCase(new RepositoryFactory())
 
         const result: Result<MessageEntity> = await application.execute(body)
+
+        return result.getHttpResult(res)
+    }
+
+    async gelAll(req: Request, res: Response) {
+        const application = new FindAllMessageUseCase(new RepositoryFactory())
+
+        const result: Result<MessageEntity[]> = await application.execute();
 
         return result.getHttpResult(res)
     }

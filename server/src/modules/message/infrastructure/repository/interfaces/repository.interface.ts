@@ -7,4 +7,5 @@ export abstract class RepMessageAdapter extends BaseRep<MessageEntity> {
     abstract repository: PrismaClient
     abstract update(id: string, data: Partial<MessageEntity>): Promise<any>
     abstract findByInput(input: string): Promise<any>
+    abstract findAll()
 }
