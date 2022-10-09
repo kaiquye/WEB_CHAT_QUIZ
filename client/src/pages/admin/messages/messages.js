@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Table} from "../../../components/table";
 import {useEffect, useState} from "react";
-import {UserServices} from "../../../services/user.services";
+import {UserServices} from "../../../services/api/user.services";
 import {NewMessageModal} from "../../../components/modal/newMessage";
 
 export function Messages() {

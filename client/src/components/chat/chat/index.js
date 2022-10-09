@@ -2,7 +2,7 @@ import {useRef, useState} from "react";
 import style from './chat.module.css'
 import {Message} from "../message";
 import {InputChat} from "../input";
-import {UserServices} from "../../../services/user.services";
+import {UserServices} from "../../../services/api/user.services";
 
 export function Chat(){
     const buttonIconChat = useRef();
