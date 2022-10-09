@@ -7,17 +7,16 @@
     display: flex;
     flex-direction: column;
 
-    width: 145px;
-    max-width: 145px;
-    height: 145px;
-    max-height: 145px;
+    width: 155px;
+    max-width: 205px;
+    height: 205px;
+    max-height: 300px;
 
     padding: 7px;
-    border-top-left-radius: 10px;
+    border-top-left-radius: 29px;
     border-top-right-radius: 10px;
 
-    background-color: red;
-
+    background-color: #000000;
 }
 
 .chat .background{
@@ -28,8 +27,15 @@
     flex-direction: column;
 
     gap: 2px;
+    border-top-left-radius: 29px;
+    border-top-right-radius: 10px;
 
-    background-color:white;
+    background-color: white;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/134/134914.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    box-shadow: inset #c9c9c9 2px 6px 10px 1px;
     overflow-y: auto;
 }
 
@@ -38,12 +44,38 @@
 }
 
 .main .chat .menu button {
+    width: 20px;
+    height: 20px;
+
+    background-color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://cdn0.iconfinder.com/data/icons/gradak-communikatok-flad/32/communication-20-512.png");
+}
+
+.main .chat .menu button {
     border: none;
 
-    background-color: #6161ff;
     border: 2px;
 
     font-size: 10px;
     color: white;
     font-family: Ubuntu;
+    cursor: pointer;
+}
+
+.openChat button{
+    background-color: #43d243;
+    border: none;
+    color: white;
+
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7ZJr_nTq49ceuFehxMG8FZI7Pb1JYsj-2UmFL2_NeKyQrBCLYWqbDkEEZvGIAZFm7nA&usqp=CAU");
 }

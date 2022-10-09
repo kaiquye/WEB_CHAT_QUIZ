@@ -23,10 +23,8 @@ export function Chat(){
 
     return(
         <section style={{position: 'absolute'}}>
-            <section>
-                <button ref={buttonIconChat} onClick={openOrClose} >
-                    open
-                </button>
+            <section className={style.openChat}>
+                <button ref={buttonIconChat} onClick={openOrClose} ></button>
             </section>
             <section ref={modalChat} style={{display: 'none'}} className={style.main} >
                 <div className={style.chat}>
@@ -39,7 +37,7 @@ export function Chat(){
                     </section>
                     <div className={style.menu}>
                         <InputChat setMessage={setMessage} place={'nova mensagem'}/>
-                        <button onClick={()=> sendMessage(message)}> Send </button>
+                        <button onClick={()=> sendMessage(message)}></button>
                     </div>
                 </div>
             </section>
