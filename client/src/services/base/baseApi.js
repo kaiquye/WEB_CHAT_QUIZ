@@ -18,12 +18,13 @@ export class BaseAPI {
         })
     }
 
-    post (url, params = undefined, headers = undefined) {
+    post (url,   data = undefined, params = undefined, headers = undefined) {
         return this.axiosInstance({
             method: 'POST',
             url: `${this.baseUrl}${url}`,
             params: params ? params : null,
-            headers: headers ? headers : null
+            headers: headers ? headers : null,
+            data: data ? data: null
         })
     }
 

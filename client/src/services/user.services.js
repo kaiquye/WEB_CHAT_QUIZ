@@ -33,4 +33,8 @@ export class UserServices extends BaseAPI {
         console.log('-------------->',input)
         return this.put('/'+id.toString(), {input: input, output: output})
     }
+
+    async saveNewMessage(userId, input, output) {
+        return this.post('/', {userId, input, output})
+    }
 }

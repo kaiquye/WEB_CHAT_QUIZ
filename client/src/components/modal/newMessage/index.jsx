@@ -1,4 +1,5 @@
 import {useEffect, useRef} from "react";
+import {UserServices} from "../../../services/user.services";
 
 
 export function NewMessageModal({visibility}) {
@@ -12,6 +13,10 @@ export function NewMessageModal({visibility}) {
            modalVisibility.current.style.display = 'flex';
         }
     },[visibility])
+
+    const saveNewMessage = ()=>{
+        await = new UserServices().saveNewMessage()
+    }
 
     return (
         <section ref={modalVisibility} >
