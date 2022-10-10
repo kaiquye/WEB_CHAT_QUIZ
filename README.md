@@ -1,6 +1,12 @@
 <h3> Project focused on the development of back-end best practices. :rocket:</h3>
 
+## Generic Repository 
 
+The generic repository will contain the common methods among all application repositories, feel free to include other methods that you think are common in your application in the interface and class. In this way, we will create the interface determining which methods will be exposed and a class that will implement this interface.
+
+<p align="center">
+    <IMG height="400" src="https://user-images.githubusercontent.com/69175890/194790077-aeb481d9-ae1f-416f-a587-897df2d225d4.png">
+</p>
 
 ## Back-end 
 
@@ -15,5 +21,8 @@ One of the first and main ones was introduced by E. Evans in its Domain Driven D
 </p>
 
 
-### Preview front-end
+### Front-end
+
+Focus on the back end, the fron just to illustrate how it works
+
 https://user-images.githubusercontent.com/69175890/194789664-9e78102b-a6c2-44d6-be68-17af890c7065.webm
