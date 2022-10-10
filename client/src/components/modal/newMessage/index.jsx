@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {UserServices} from "../../../services/api/user.services";
-
+import style from './modal.module.css'
+import * as React from "react";
 
 export function NewMessageModal({visibility}) {
 
@@ -18,20 +19,25 @@ export function NewMessageModal({visibility}) {
 
     const saveNewMessage = async (event)=>{
         event.preventDefault()
-        alert(output)
         await new UserServices().saveNewMessage(input, output)
+        window.location.reload()
     }
 
     return (
-        <section ref={modalVisibility} >
+        <section style={{position: 'absolute'}} className={style.main} ref={modalVisibility} >
             <form onSubmit={ async (event)=> saveNewMessage(event)}>
-                <label>input</label>
+                <label>Input</label>
                 <input placeholder={'input'} onChange={(e)=> setInput((e.target.value))} />
-                <label>output</label>
+                <label>Output</label>
                 <input placeholder={'output'} onChange={(e)=> setOutput(e.target.value)} />
-                <button>
-                    register
-                </button>
+                <div>
+                    <button className={style.register}>
+                        REGISTER
+                    </button>
+                    <button className={style.cancel}>
+                        cancel
+                    </button>
+                </div>
             </form>
         </section>
     )

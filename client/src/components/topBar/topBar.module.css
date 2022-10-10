@@ -4,7 +4,7 @@
     width: 100%;
     height: 8vh;
 
-    background-color: #ff4848;
+    background-color: #0a3396;
     font-size: 10px;
 }
 
@@ -30,7 +30,7 @@
 
 .logo h2 {
     text-decoration: none;
-    color: white;
+    color: #f9ce07;
 
     font-weight: 60;
     font-family: Ubuntu;

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {Table} from "../../../components/table";
+import {Table} from "../table";
 import {useEffect, useRef, useState} from "react";
-import {UserServices} from "../../../services/api/user.services";
-import {NewMessageModal} from "../../../components/modal/newMessage";
+import {UserServices} from "../../services/api/user.services";
+import {NewMessageModal} from "../modal/newMessage";
 import style from './messages.module.css'
 
 export function Messages({visibility_}) {
@@ -34,6 +34,7 @@ export function Messages({visibility_}) {
 
     return (
         <section ref={modalRef} style={{display: 'none'}} className={style.main}>
+            <h1 className={style.title}>Messages</h1>
             <div className={style.modal}>
                 <div className={style.modalBack}>
                     <NewMessageModal visibility={visibilityModal} />

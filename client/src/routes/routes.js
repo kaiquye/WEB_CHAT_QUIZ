@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "../pages/home/home";
 import {TopBar} from "../components/topBar";
-import { Messages } from "../pages/admin/messages/messages";
+import { Messages } from "../components/messages/messages";
 
 
 function ApplicationRoutes(){

@@ -7,7 +7,7 @@
         define quanto o botão ira usar da tela ( OPEN chat )
      */
     display: grid;
-    grid-template-columns:  100% 0% ;
+    grid-template-columns:  100% 0%;
 }
 
 .main .banner {
@@ -15,9 +15,32 @@
     height: 100%;
 
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
+
     font-family: Ubuntu;
+}
+
+.main .banner button {
+    background-color: #252940;
+    width: 100px;
+    padding: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.main .banner button:hover {
+    background-color: #1B52BF;
+}
+
+.main .banner .messages {
+    display: flex;
+    align-items: center;
+
+    position: absolute;
 }
 
 .main .chat{
@@ -40,3 +63,4 @@
 
     background-color: orange;
 }
+
